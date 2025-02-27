@@ -1,17 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./styles/index.css";
-import NavBar from "./components/Navbar";
-import About from "./components/About";
-import ServicesCard from "./components/ServicesCard";
-import TrainingCards from "./components/TrainingCards";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import AdmissionForm from "./components/AdmissionForm";
-import Programmes from "./components/Programmes";
+import App from "./components/App";
+import CertificateVerify from "./components/CertificateVerify";
 
 const theme = createTheme();
 
@@ -20,15 +13,10 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <NavBar />
-        <Home />
-        <About />
-        <ServicesCard />
-        <Programmes />
-        <AdmissionForm />
-        <TrainingCards />
-        <Contact />
-        <Footer />
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/certificate-verification" element={<CertificateVerify/>} />
+          </Routes>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>

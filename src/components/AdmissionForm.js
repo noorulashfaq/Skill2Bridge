@@ -13,30 +13,28 @@ import {
   Select,
   Grid,
   InputLabel,
-  Box,
 } from "@mui/material";
-import { styled } from "@mui/material/styles";
 
 // Styled File Upload Container
-const FileUploadContainer = styled(Box)({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  border: "2px dashed #1976d2",
-  borderRadius: "8px",
-  padding: "10px",
-  textAlign: "center",
-  cursor: "pointer",
-  transition: "0.3s",
-  "&:hover": {
-    backgroundColor: "#f0f8ff",
-  },
-});
+// const FileUploadContainer = styled(Box)({
+//   display: "flex",
+//   flexDirection: "column",
+//   alignItems: "center",
+//   border: "2px dashed #1976d2",
+//   borderRadius: "8px",
+//   padding: "10px",
+//   textAlign: "center",
+//   cursor: "pointer",
+//   transition: "0.3s",
+//   "&:hover": {
+//     backgroundColor: "#f0f8ff",
+//   },
+// });
 
 // Styled File Input (Hidden)
-const HiddenInput = styled("input")({
-  display: "none",
-});
+// const HiddenInput = styled("input")({
+//   display: "none",
+// });
 
 const AdmissionForm = () => {
   const [formData, setFormData] = useState({
@@ -54,27 +52,27 @@ const AdmissionForm = () => {
     ddeMaster: "",
     advDiploma: "",
     diploma: "",
-    documents: {
-      aadharCard: null,
-      tenthMarksheet: null,
-      twelfthMarksheet: null,
-      ugDetails: null,
-      photo: null,
-      signature: null,
-    },
+    // documents: {
+    //   aadharCard: null,
+    //   tenthMarksheet: null,
+    //   twelfthMarksheet: null,
+    //   ugDetails: null,
+    //   photo: null,
+    //   signature: null,
+    // },
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFileChange = (e) => {
-    const { name, files } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      documents: { ...prevState.documents, [name]: files[0] },
-    }));
-  };
+  // const handleFileChange = (e) => {
+  //   const { name, files } = e.target;
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     documents: { ...prevState.documents, [name]: files[0] },
+  //   }));
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -85,7 +83,7 @@ const AdmissionForm = () => {
     <section className="admission-section">
         <Container maxWidth="md" sx={{ mt: 5, mb: 5, p: 3, bgcolor: "#f9f9f9", borderRadius: 2, boxShadow: 3 }}>
       <Typography variant="h4" align="center" gutterBottom sx={{ fontWeight: "bold", color: "#1A2A4F" }}>
-        Admission Form 2024-2025
+        Admission Form 
       </Typography>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={3}>
@@ -128,7 +126,7 @@ const AdmissionForm = () => {
                 <MenuItem value="UG">UG</MenuItem>
                 <MenuItem value="PG">PG</MenuItem>
                 <MenuItem value="Diploma">Diploma</MenuItem>
-                <MenuItem value="Advanced Diploma">Advanced Diploma</MenuItem>
+                {/* <MenuItem value="Advanced Diploma">Advanced Diploma</MenuItem> */}
               </Select>
             </FormControl>
           </Grid>
@@ -146,17 +144,17 @@ const AdmissionForm = () => {
           )}
           {formData.courseType === "Diploma" && (
             <Grid item xs={12}>
-              <TextField fullWidth label="Diploma Course (1 Year)" name="diploma" onChange={handleChange} />
+              <TextField fullWidth label="Diploma Course" name="diploma" onChange={handleChange} />
             </Grid>
           )}
-          {formData.courseType === "Advanced Diploma" && (
+          {/* {formData.courseType === "Advanced Diploma" && (
             <Grid item xs={12}>
               <TextField fullWidth label="Advanced Diploma Course (2 Years)" name="advDiploma" onChange={handleChange} />
             </Grid>
-          )}
+          )} */}
 
           {/* File Uploads */}
-          {[
+          {/* {[
             { label: "Aadhar Card", name: "aadharCard" },
             { label: "10th Marksheet", name: "tenthMarksheet" },
             { label: "12th Marksheet", name: "twelfthMarksheet" },
@@ -180,7 +178,7 @@ const AdmissionForm = () => {
                 )}
               </FileUploadContainer>
             </Grid>
-          ))}
+          ))} */}
 
           {/* Submit Button */}
           <Grid item xs={12} textAlign="center">

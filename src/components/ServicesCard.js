@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   Card,
   CardContent,
@@ -10,29 +9,64 @@ import {
 } from "@mui/material";
 
 const services = [
-  { title: "B.Voc in Medical Lab Technology", link: "/B-Voc-in-Medical-Lab-Technology" },
-  { title: "B.Voc in Radiology & Medical Imaging Technology", link: "/B-Voc-in-Radiology-Medical-Imaging" },
-  { title: "B.Voc in Optometry Technology", link: "/B-Voc-in-Optometry-Technology" },
-  { title: "B.Voc in Operation Theatre Technology", link: "/B-Voc-in-Operation-Theatre-Technology" },
-  { title: "B.Voc in Dialysis Technology", link: "/B-Voc-in-Dialysis-Technology" },
-  { title: "B.Voc in Cardiac Care Technology", link: "/B-Voc-in-Cardiac-Care-Technology" },
-  { title: "B.Voc in Hospital Sterilization Technology", link: "/B-Voc-in-Hospital-Sterilization-Technology" },
-  { title: "B.Voc in Patient Care Management", link: "/B-Voc-in-Patient-Care-Management" },
-  { title: "B.Voc in Physiotherapy", link: "/B-Voc-in-Physiotherapy" },
-  { title: "B.Voc in Yoga & Naturopathy", link: "/B-Voc-in-Yoga-Naturopathy" },
-  { title: "B.Voc in Computer Software Technology", link: "/B-Voc-in-Computer-Software-Technology" },
-  { title: "B.Voc in Information Technology", link: "/B-Voc-in-Information-Technology" },
-  { title: "B.Voc in Multimedia & Animation", link: "/B-Voc-in-Multimedia-Animation" },
-  { title: "B.Voc in E-commerce and Digital Marketing", link: "/B-Voc-in-E-commerce-Digital-Marketing" },
-  { title: "B.Voc in Library Science", link: "/B-Voc-in-Library-Science" },
-  { title: "B.Voc in Fine Arts", link: "/B-Voc-in-Fine-Arts" },
-  { title: "B.Voc in Beauty Science & Cosmetology", link: "/B-Voc-in-Beauty-Science-Cosmetology" },
-  { title: "B.Voc in Fashion Designing", link: "/B-Voc-in-Fashion-Designing" },
-  { title: "B.Voc in Physical & Fitness Training", link: "/B-Voc-in-Physical-Fitness-Training" },
-  { title: "B.Voc in Hotel Management", link: "/B-Voc-in-Hotel-Management" },
-  { title: "B.Voc in Marketing and Entrepreneurship", link: "/B-Voc-in-Marketing-Entrepreneurship" },
-  { title: "M.Voc in Hospital Management", link: "/M-Voc-in-Hospital-Management" },
-  { title: "M.Voc in Computer Software Technology", link: "/M-Voc-in-Computer-Software-Technology" },
+  { title: "Diploma in Computer Hardware Engineering" },
+  { title: "Diploma in Computer Science" },
+  { title: "Diploma in Computer Hardware and Networking" },
+  { title: "Diploma in Graphic Designing" },
+  { title: "Diploma in Multimedia, Animation & Video Editing" },
+  { title: "Diploma in Web Designing" },
+  { title: "Diploma in Software Engineering" },
+  { title: "Diploma in Fire and Safety Management" },
+  { title: "Diploma in Hotel and Catering Management" },
+  { title: "Diploma in Business Management" },
+  { title: "Diploma in Psychology" },
+  { title: "Diploma in HR Management" },
+  { title: "Diploma in Journalism & Mass Communication" },
+  { title: "Diploma in Library & Information Science" },
+  { title: "Diploma in Travel & Tourism Management" },
+  { title: "Diploma in Hospitality & Tourism Management" },
+  { title: "Diploma in Industrial Safety & Disaster Management" },
+  { title: "Diploma in Building and Construction" },
+  { title: "Diploma in Photography" },
+  { title: "Diploma in Sports Nutrition" },
+  { title: "Diploma in Gardening" },
+  { title: "Diploma in Social Work" },
+  { title: "Diploma in Makeup & Hair Dressing" },
+  { title: "Diploma in Material Management" },
+  { title: "Diploma in Digital Marketing" },
+  { title: "Diploma in Beauty Parlour" },
+  { title: "Diploma in Tailoring" },
+  { title: "Diploma in Civil Construction Supervision" },
+  { title: "Diploma in Tourism Management" },
+  { title: "Diploma in Export and Import Management" },
+  { title: "Diploma in Hotel Management" },
+  { title: "Diploma in Hospitality Management" },
+  { title: "Diploma in Import & Export" },
+  { title: "Diploma in HR Executive" },
+  { title: "Diploma in Contract Management" },
+  { title: "Diploma in Agriculture & Plantation Management" },
+  { title: "Diploma in Fashion Technology" },
+  { title: "Diploma in Plumbing" },
+  { title: "Diploma in Surveying" },
+  { title: "Diploma in Logistics" },
+  { title: "Diploma in Beauty Care" },
+  { title: "Diploma in Cosmetology & Beauty Parlour Management" },
+  { title: "Diploma in Garment Export Management" },
+  { title: "Diploma in Caregiving" },
+  { title: "Diploma in Tourist Guiding" },
+  { title: "Diploma in Hair Styling" },
+  { title: "Diploma in Barbering" },
+  { title: "Diploma in Professional Makeup" },
+  { title: "Diploma in Senior Beauty Therapy" },
+  { title: "Diploma in Housekeeping & Laundry Operations" },
+  { title: "Diploma in Pre-School & Primary Teacher Training" },
+  { title: "Diploma in Physical and Sports Trainer" },
+  { title: "Diploma in Physical Education Teacher" },
+  { title: "Diploma in Primary Teacher Training" },
+  { title: "Diploma in School Operation & Management" },
+  { title: "Diploma in Early Childhood Care and Education" },
+  { title: "Diploma in Montessori Teacher Training" },
+  { title: "Diploma in Nursery Teacher Training" },
 ];
 
 const itemsPerPage = 8;
@@ -52,7 +86,7 @@ const ServicesCard = () => {
     <section className="bvoc-section">
       <Box sx={{ padding: "4rem 2rem", background: "linear-gradient(135deg, #0B1F3B 0%, #1A2A4F 100%)" }}>
         <Typography variant="h4" fontWeight="bold" textAlign="center" color="#E8C27D" mb={4}>
-          Bachelor of Vocational Program (B.VOC)
+          Our Diploma Programmes
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           {displayedServices.map((service, index) => (
@@ -77,7 +111,7 @@ const ServicesCard = () => {
                   <Typography variant="h6" fontWeight="bold" color="#1A2A4F">
                     {service.title}
                   </Typography>
-                  <Box mt={2}>
+                  {/* <Box mt={2}>
                     <Link
                       to={service.link}
                       style={{
@@ -95,7 +129,7 @@ const ServicesCard = () => {
                     >
                       Read More →
                     </Link>
-                  </Box>
+                  </Box> */}
                 </CardContent>
               </Card>
             </Grid>

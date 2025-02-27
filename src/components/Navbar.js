@@ -35,11 +35,11 @@ function Navigation() {
     { to: "home-section", label: "Home" },
     { to: "about-section", label: "About" },
     { to: "admission-section", label: "Admission-Form" },
-    { to: "contact-section", label: "Contact" },
+    // { to: "contact-section", label: "Contact" },
   ];
 
   const submenuLinks = [
-    { to: "bvoc-section", label: "B.VOC" },
+    { to: "bvoc-section", label: "Diploma" },
     { to: "programmes-section", label: "UG & PG" },
   ];
 
